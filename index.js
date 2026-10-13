@@ -4,9 +4,13 @@ import path from "path";
 import fs from "fs";
 import http from "http";
 import https from "https";
+import { inject } from "@vercel/analytics";
 
 const app = express();
 let storedCookies = [];
+
+// Initialize Vercel Analytics
+inject();
 
 const staticPath = path.join(process.cwd(), "static");
 
